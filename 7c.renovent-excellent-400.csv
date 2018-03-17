@@ -47,13 +47,13 @@ w,,PreheaterEnabled,408003,,,4080,31,,,UIR,0=no;1=yes
 w,,CentralHeatingPlusHeatRecover,408007,,,4080,07,,,UIR,0=off;1=on
 w,,ImbalancePermissible,408008,,,4080,08,,,UIR,0=not allowed;1=allowed
 w,,FixedImbalance,408009,,,4080,09,,,SIR,,m³/h
-w,,FanSpeed,,,,40a1,,,,ULR,0x0=Feuchteschutz;0x00010001=Reduziert;0x00020002=Normal;0x00030003=Intensiv,,,,,IGN:1
+w,,FanSpeed,,,,40a1,,,,ULR,0x0=Minimal;0x00010001=Reduced;0x00020002=Normal;0x00030003=Intensive,,,,,IGN:1
 
 #### SENSOR INFORMATION ####
 r,,RelativeHumidity,40220120,,,4022,20,,,UIR,10,% ,RelativeHumidity
 r,,HumidityBoostState,40220121,,,4022,21,,,UIR,0=Error;1=Not Initialized;2=Sensor Not Active;3=PowerUp Delay;4=Normal RH;5=Boost Rising;6=Boost Stable;7=Boost Decending,,HumidityBoostState
 r,,SoftwareVersion,40220100,,,4022,00,,,STR:*,,,SoftwareVersion
-r,,Ventilatorbetrieb,40220101,,,4022,01,,,UIR,0=Minimal;1=Reduced;2=Normal;3=Intensive,,FanMode
+r,,FanSpeed,40220101,,,4022,01,,,UIR,0=Minimal;1=Reduced;2=Normal;3=Intensive,,FanMode
 r,,InletFanSpeed,40220102,,,4022,02,,,UIR,,rpm,InletFanSpeed
 r,,ExhaustFanSpeed,40220103,,,4022,03,,,UIR,,rpm,ExhaustFanSpeed
 r,,InsideTemperature,40220107,,,4022,07,,,SIR,10,°C,InsideTemperature
