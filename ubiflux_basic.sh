@@ -20,9 +20,10 @@ BYPASSOPERATION="$(ebusctl read -f BypassStatus)"
 FROSTSTATUS="$(ebusctl read -f FrostStatus)"
 
 echo "Inside Temperature $INTEMP °C"
-echo "Outside Temperature $OUTTEMP °C, anti-frost status is: $FROSTSTATUS, bypass valve status is: $BYPASSOPERATION"
+echo "Outside Temperature $OUTTEMP °C"
+echo "Anti-frost status is: $FROSTSTATUS, bypass valve status is: $BYPASSOPERATION"
 echo "Fan speed mode is set to $FANSPEEDMODE, with a flow rate of $FANSPEEDM3
 echo "The inlet fan is running at $INLETFANRPM RPM"
 echo "The outlet fan is running at $OUTLETFANRPM RPM"
-echo "Inlet Flow $INLETFLOW m³/h, with an inlet pressure of $INLETPRESS Pa"
+echo "Inlet Flow $INLETFLOW m³\/h, with an inlet pressure of $INLETPRESS Pa"
 echo "The filter is $FILTERSTATUS"
