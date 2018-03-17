@@ -36,32 +36,32 @@ r,,BetriebsstundenTotal,,,,4050,24,,,UIR,-5,h,,,,UIR,,,,,,UIR,,,,,,UIR,,,,,,UIR
 r,,LuftmengeTotal,,,,4050,25,,,UIR,-1000,m³,,,,UIR,,,,,,UIR,,,,,,UIR,,,,,,UIR
 
 #### KONFIGURATION AENDERN ####
-w,,LuftmengeStufe0,408001,,,4080,21,,,UIR,,m³/h
-w,,LuftmengeStufe1,408001,,,4080,01,,,UIR,,m³/h
-w,,LuftmengeStufe2,408001,,,4080,02,,,UIR,,m³/h
-w,,LuftmengeStufe3,408001,,,4080,03,,,UIR,,m³/h
-w,,BypassTemperatur,408001,,,4080,04,,,UIR,10,°C
+w,,AirFlowRateMode0,408001,,,4080,21,,,UIR,,m³/h
+w,,AirFlowRateMode1,408001,,,4080,01,,,UIR,,m³/h
+w,,AirFlowRateMode2,408001,,,4080,02,,,UIR,,m³/h
+w,,AirFlowRateMode3,408001,,,4080,03,,,UIR,,m³/h
+w,,BypassTemperature,408001,,,4080,04,,,UIR,10,°C
 w,,BypassHysterese,408003,,,4080,30,,,UIR,10,°C
-w,,Bypassbetrieb,408003,,,4080,1b,,,UIR,0=auto;1=geschlossen;2=geoeffnet
+w,,BypassValveOperation,408003,,,4080,1b,,,UIR,0=auto;1=closed;2=open
 w,,VorheizRegister_an,408003,,,4080,31,,,UIR,0=nein;1=ja
 w,,ZentralheizungWRG,408007,,,4080,07,,,UIR,0=aus;1=ein
-w,,DruckungleichgewichtZulaessig,408008,,,4080,08,,,UIR,0=nicht zulaessig;1=zulaessig
-w,,FestesDruckungleichgewicht,408009,,,4080,09,,,SIR,,m³/h
-w,,Ventilatorbetrieb,,,,40a1,,,,ULR,0x0=Feuchteschutz;0x00010001=Reduziert;0x00020002=Normal;0x00030003=Intensiv,,,,,IGN:1
+w,,ImbalancePermissible,408008,,,4080,08,,,UIR,0=not allowed;1=allowed
+w,,FixedImbalance,408009,,,4080,09,,,SIR,,m³/h
+w,,FanSpeed,,,,40a1,,,,ULR,0x0=Feuchteschutz;0x00010001=Reduziert;0x00020002=Normal;0x00030003=Intensiv,,,,,IGN:1
 
 #### SENSORDATEN ####
-r,,Feuchte,40220120,,,4022,20,,,UIR,10,% ,RelativeHumidity
-r,,FeuchtigkeitsSteigerung,40220121,,,4022,21,,,UIR,0=Error;1=Not Initialized;2=Sensor Not Active;3=PowerUp Delay;4=Normal RH;5=Boost Rising;6=Boost Stable;7=Boost Decending,,HumidityBoostState
+r,,RelativeHumidity,40220120,,,4022,20,,,UIR,10,% ,RelativeHumidity
+r,,HumidityBoostState,40220121,,,4022,21,,,UIR,0=Error;1=Not Initialized;2=Sensor Not Active;3=PowerUp Delay;4=Normal RH;5=Boost Rising;6=Boost Stable;7=Boost Decending,,HumidityBoostState
 r,,SoftwareVersion,40220100,,,4022,00,,,STR:*,,,SoftwareVersion
-r,,Ventilatorbetrieb,40220101,,,4022,01,,,UIR,0=Feuchteschutz;1=Reduziert;2=Normal;3=Intensiv,,FanMode
-r,,TatsaechlicheDrehzahlZuluft,40220102,,,4022,02,,,UIR,,rpm,InletFanSpeed
-r,,TatsaechlicheDrehzahlAbluft,40220103,,,4022,03,,,UIR,,rpm,ExhaustFanSpeed
-r,,Ablufttemperatur,40220107,,,4022,07,,,SIR,10,°C,InsideTemperature
-r,,Aussenlufttemperatur,40220108,,,4022,08,,,SIR,10,°C,OutsideTemperature
-r,,TatsaechlicheZuluftmenge,4022010B,,,4022,0b,,,UIR,,m³/h,InletFlow
-r,,TatsaechlicheAbluftmenge,4022010C,,,4022,0c,,,UIR,,m³/h,ExhaustFlow
-r,,IstwertZuluftdruck,40220114,,,4022,14,,,UIR,10,Pa,PressureInlet
-r,,IstwertAbluftdruck,40220115,,,4022,15,,,UIR,10,Pa,PressureExhaust
+r,,Ventilatorbetrieb,40220101,,,4022,01,,,UIR,0=Minimal;1=Reduced;2=Normal;3=Intensive,,FanMode
+r,,InletFanSpeed,40220102,,,4022,02,,,UIR,,rpm,InletFanSpeed
+r,,ExhaustFanSpeed,40220103,,,4022,03,,,UIR,,rpm,ExhaustFanSpeed
+r,,InsideTemperature,40220107,,,4022,07,,,SIR,10,°C,InsideTemperature
+r,,OutsideTemperature,40220108,,,4022,08,,,SIR,10,°C,OutsideTemperature
+r,,InletFlow,4022010B,,,4022,0b,,,UIR,,m³/h,InletFlow
+r,,ExhaustFlow,4022010C,,,4022,0c,,,UIR,,m³/h,ExhaustFlow
+r,,PressureInlet,40220114,,,4022,14,,,UIR,10,Pa,PressureInlet
+r,,PressureExhaust,40220115,,,4022,15,,,UIR,10,Pa,PressureExhaust
 r,,FilterStatus,40220118,,,4022,18,,,UIR,0=Clean;1=Dirty,,FilterStatus
 r,,CO2Sensor1Status,40220128,,,4022,28,,,UIR,,,CO2Sensor1Status
 r,,CO2Sensor1Value,40220129,,,4022,29,,,UIR,,,CO2Sensor1Value
@@ -77,22 +77,22 @@ r,,Errors,409000,,,4090,00,,s,UCH,,,,ign,,IGN:2,,,,code,,UCH,,,,code,,UCH,,,,cod
 #w,,reseterrors,409103FFFFFF,,,4091,7c0001,,m,HEX:3,,,,result,s,UIR,0=ResetNotRequested;1=ResetSuccessful;2=ResetRelayed;3=NoErrorsFound;4=ResetFailed;5=BlockingErrors;6=UnknownResult
 #w,,resetfilter,409103FFFFFF,,,4091,7c0100,,,,,,,result,s,UIR,0=ResetNotRequested;1=ResetSuccessful;2=ResetRelayed;3=FilterWarningWasNotSet;4=ResetFailed;5=UnknownResult
 r,,PosStufenschalter,,,,4022,06,,,UIR,,,switchposition
-r,,WertDIPSchalter,40220104,,,4022,04,,,UIR,,,DipswitchValue
-r,,LuefterStatus,40220111,,,4022,11,,,UIR,0=Initialize;1=Const. Flow;2=Const. RPM;3=Off;4=Error,,FanStatus
-r,,SollZuluftmenge,40220109,,,4022,09,,,UIR,,m³/h,SettingInletFlow
-r,,SollAbluftmenge,4022010A,,,4022,0a,,,UIR,,m³/h,SettingExhaustFlow
-r,,Bypassstrom,4022010D,,,4022,0D,,,UIR,,,BypassCurrent
-r,,StatusBypass,4022010E,,,4022,0E,,,UIR,0=Initialize;1=Opening;2=Closing;3=Open;4=Closed;5=Error,,BypassStatus
-r,,StatusVorheizregister,4022010F,,,4022,0F,,,UIR,0=Initialize;1=Disabled;2=Enabled,,PreheaterStatus
-r,,LeistungVorheizregister,40220110,,,4022,10,,,UIR,,,PreheaterPower
-r,,StatusNachheizregister,4022011D,,,4022,1d,,,UIR,0=Initialize;1=Disabled;2=Enabled,,PostheaterStatus
-r,,LeistungNachheizregister,4022011E,,,4022,1e,,,UIR,,,PostheaterPower
+r,,DipswitchValue,40220104,,,4022,04,,,UIR,,,DipswitchValue
+r,,FanStatus,40220111,,,4022,11,,,UIR,0=Initialize;1=Const. Flow;2=Const. RPM;3=Off;4=Error,,FanStatus
+r,,SettingInletFlow,40220109,,,4022,09,,,UIR,,m³/h,SettingInletFlow
+r,,SettingExhaustFlow,4022010A,,,4022,0a,,,UIR,,m³/h,SettingExhaustFlow
+r,,BypassCurrent,4022010D,,,4022,0D,,,UIR,,,BypassCurrent
+r,,BypassStatus,4022010E,,,4022,0E,,,UIR,0=Initialize;1=Opening;2=Closing;3=Open;4=Closed;5=Error,,BypassStatus
+r,,PreheaterStatus,4022010F,,,4022,0F,,,UIR,0=Initialize;1=Disabled;2=Enabled,,PreheaterStatus
+r,,PreheaterPower,40220110,,,4022,10,,,UIR,,,PreheaterPower
+r,,PostheaterStatus,4022011D,,,4022,1d,,,UIR,0=Initialize;1=Disabled;2=Enabled,,PostheaterStatus
+r,,PostheaterPower,4022011E,,,4022,1e,,,UIR,,,PostheaterPower
 r,,FrostStatus,40220116,,,4022,16,,,UIR,0=Initialize;1=No Frost;2=Defrost Wait;3=Heater;4=Error;5=Velu Heater;6=Velu Unbalance;7=Unbalanace,,FrostStatus
-r,,eBusSynchFehler,40220164,,,4022,64,,,UIR,,,EbusSyncGenErrorCount
+r,,EbusSyncGenErrorCount,40220164,,,4022,64,,,UIR,,,EbusSyncGenErrorCount
 r,,PerilexPosition,40220105,,,4022,05,,,UIR,,,PerilexPosition
 r,,Contact1Position,4022011B,,,4022,1b,,,UIR,,,Contact1Position
 r,,Contact2Position,4022011C,,,4022,1c,,,UIR,,,Contact2Position
-r,,EWTStatus,4022011F,,,4022,1f,,,UIR,,,EWTStatus
+r,,EWTStatus,4022011F,,,4022,1f,,,UIR,,,GeoHeatExchangerStatus_EWTStatus
 r,,OptionTemperature,4022011A,,,4022,1a,,,UIR,,,OptionTemperature
 
 #### UNDEFINIERT ####
