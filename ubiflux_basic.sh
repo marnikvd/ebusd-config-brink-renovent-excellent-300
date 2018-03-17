@@ -19,32 +19,10 @@ FILTERSTATUS="$(ebusctl read -f FilterStatus)"
 BYPASSOPERATION="$(ebusctl read -f BypassStatus)"
 FROSTSTATUS="$(ebusctl read -f FrostStatus)"
 
+echo "Inside Temperature $INTEMP °C"
+echo "Outside Temperature $OUTTEMP °C, anti-frost status is: $FROSTSTATUS, bypass valve status is: $BYPASSOPERATION"
+echo "Fan speed mode is set to $FANSPEEDMODE, with a flow rate of $FANSPEEDM3
+echo "The inlet fan is running at $INLETFANRPM RPM"
+echo "The outlet fan is running at $OUTLETFANRPM RPM"
 echo "Inlet Flow $INLETFLOW m³/h, with an inlet pressure of $INLETPRESS Pa"
-echo $INLETPRESS
-echo $OUTLETFLOW
-echo $OUTLETPRES
-echo $FANSPEEDMODE
-echo $FANSPEEDM3
-echo $OUTTEMP
-echo $INTEMP
-echo $INLETFANRPM
-echo $OUTLETFANRPM
-echo $FILTERSTATUS
-echo $BYPASSOPERATION
-echo $FROSTSTATUS
-
-
-
-echo -n "SoftwareVersion: "
-
-
-echo -n "Current Fan Speed: "
-
-
-
-#echo -n "Inlet Flow: ";ebusctl read -f InletFlow; echo -n " with system pressure of ";ebusctl read -f PressureInlet; echo -n " Pa"
-
-
-#echo -n "Exhaust Flow (m³):"
-#ebusctl read -f ExhaustFlow
-#echo
+echo "The filter is $FILTERSTATUS"
