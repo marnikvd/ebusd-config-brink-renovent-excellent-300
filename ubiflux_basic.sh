@@ -25,5 +25,6 @@ echo "Anti-frost status is: $FROSTSTATUS, bypass valve status is: $BYPASSOPERATI
 echo "Fan speed mode is set to $FANSPEEDMODE, with a flow rate of $FANSPEEDM3"
 echo "The inlet fan is running at $INLETFANRPM RPM"
 echo "The outlet fan is running at $OUTLETFANRPM RPM"
-echo "Inlet Flow $INLETFLOW m³\/h, with an inlet pressure of $INLETPRESS Pa"
+echo "Inlet Flow is $INLETFLOW m³/h, with a pressure of $INLETPRESS Pa"
+echo "Outlet Flow is $OUTLETFLOW m³/h, with a pressure of $OUTLETPRES Pa"
 echo "The filter is $FILTERSTATUS"
