@@ -2,6 +2,7 @@
 
 #Init if not yet started
 #TODO
+echo "Querying Device..."
 
 #Get Basic Info
 INLETFLOW="$(ebusctl read -f InletFlow)"
@@ -18,7 +19,7 @@ FILTERSTATUS="$(ebusctl read -f FilterStatus)"
 BYPASSOPERATION="$(ebusctl read -f BypassStatus)"
 FROSTSTATUS="$(ebusctl read -f FrostStatus)"
 
-echo $INLETFLOW
+echo "Inlet Flow $INLETFLOW m³/h, with an inlet pressure of $INLETPRESS Pa"
 echo $INLETPRESS
 echo $OUTLETFLOW
 echo $OUTLETPRES
@@ -27,6 +28,7 @@ echo $FANSPEEDM3
 echo $OUTTEMP
 echo $INTEMP
 echo $INLETFANRPM
+echo $OUTLETFANRPM
 echo $FILTERSTATUS
 echo $BYPASSOPERATION
 echo $FROSTSTATUS
