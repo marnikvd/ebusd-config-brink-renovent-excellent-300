@@ -13,13 +13,13 @@
 ## *w,kwl,,,,3c,4050,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 
 #### AKTUELLE KONFIGDATEN ####
-r,,LuftmengeStufe0,,,,4050,21,aktuell,,UIR,,m³/h,,minimum,,UIR,,m³/h,,maximum,,UIR,,m³/h,,Schrittgroesse,,UIR,,m³/h,,Werkseinstellung,,UIR,,m³/h
-r,,LuftmengeStufe1,,,,4050,01,aktuell,,UIR,,m³/h,,minimum,,UIR,,m³/h,,maximum,,UIR,,m³/h,,Schrittgroesse,,UIR,,m³/h,,Werkseinstellung,,UIR,,m³/h
-r,,LuftmengeStufe2,,,,4050,02,aktuell,,UIR,,m³/h,,minimum,,UIR,,m³/h,,maximum,,UIR,,m³/h,,Schrittgroesse,,UIR,,m³/h,,Werkseinstellung,,UIR,,m³/h
-r,,LuftmengeStufe3,,,,4050,03,aktuell,,UIR,,m³/h,,minimum,,UIR,,m³/h,,maximum,,UIR,,m³/h,,Schrittgroesse,,UIR,,m³/h,,Werkseinstellung,,UIR,,m³/h
-r,,BypassTemperatur,,,,4050,04,aktuell,,SIR,10,°C,,minimum,,SIR,10,°C,,maximum,,SIR,10,°C,,Schrittgroesse,,SIR,10,°C,,Werkseinstellung,,SIR,10,°C
-r,,BypassHysterese,,,,4050,30,aktuell,,SIR,10,°C,,minimum,,SIR,10,°C,,maximum,,SIR,10,°C,,Schrittgroesse,,SIR,10,°C,,Werkseinstellung,,SIR,10,°C
-r,,Bypassbetrieb,,,,4050,1b,aktuell,,UIR,0=auto;1=geschlossen;2=geoeffnet,,,minimum,,UIR,,,,maximum,,UIR,,,,Schrittgroesse,,UIR,,,,Werkseinstellung,,UIR
+r,,AirFlowRateMode0,,,,4050,21,currentvalue,,UIR,,m³/h,,minimum,,UIR,,m³/h,,maximum,,UIR,,m³/h,,stepsize,,UIR,,m³/h,,factorydefault,,UIR,,m³/h
+r,,AirFlowRateMode1,,,,4050,01,currentvalue,,UIR,,m³/h,,minimum,,UIR,,m³/h,,maximum,,UIR,,m³/h,,stepsize,,UIR,,m³/h,,factorydefault,,UIR,,m³/h
+r,,AirFlowRateMode2,,,,4050,02,currentvalue,,UIR,,m³/h,,minimum,,UIR,,m³/h,,maximum,,UIR,,m³/h,,stepsize,,UIR,,m³/h,,factorydefault,,UIR,,m³/h
+r,,AirFlowRateMode3,,,,4050,03,currentvalue,,UIR,,m³/h,,minimum,,UIR,,m³/h,,maximum,,UIR,,m³/h,,stepsize,,UIR,,m³/h,,factorydefault,,UIR,,m³/h
+r,,BypassTemperature,,,,4050,04,currentvalue,,SIR,10,°C,,minimum,,SIR,10,°C,,maximum,,SIR,10,°C,,stepsize,,SIR,10,°C,,factorydefault,,SIR,10,°C
+r,,BypassHysterese,,,,4050,30,currentvalue,,SIR,10,°C,,minimum,,SIR,10,°C,,maximum,,SIR,10,°C,,stepsize,,SIR,10,°C,,factorydefault,,SIR,10,°C
+r,,BypassValveOperation,,,,4050,1b,currentvalue,,UIR,0=auto;1=closed;2=open,,,minimum,,UIR,,,,maximum,,UIR,,,,stepsize,,UIR,,,,factorydefault,,UIR
 r,,ZentralheizungWRG,,,,4050,07,aktuell,s,UIR,0=aus;1=ein,,,minimum,,UIR,,,,maximum,,UIR,,,,Schrittgroesse,,UIR,,,,Werkseinstellung,,UIR
 r,,DruckungleichgewichtZulaessig,,,,4050,08,aktuell,s,UIR,0=nicht zulaessig;1=zulaessig,,,minimum,,UIR,,,,maximum,,UIR,,,,Schrittgroesse,,UIR,,,,Werkseinstellung,,UIR
 r,,FestesDruckungleichgewicht,,,,4050,09,aktuell,,SIR,,m³/h,,minimum,,SIR,,m³/h,,maximum,,SIR,,m³/h,,Schrittgroesse,,SIR,,m³/h,,Werkseinstellung,,SIR,,m³/h
