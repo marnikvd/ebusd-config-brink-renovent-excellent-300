@@ -4,7 +4,7 @@
 ## This ebus config may work for Ubbink, VisionAIR, WOLF CWL series and some other systems that are identical
 ## You may need to modify the 7c address in the next 2 lines for your brand/model. Or just uncomment the necessary lines.
 
-## Renovent Excellent 400 (plus) series
+## Renovent Excellent 400 (plus) series / Ubbink Ubiflux W400
 *r,kwl,,,,7c,4050,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 *w,kwl,,,,7c,4050,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 
@@ -20,13 +20,13 @@ r,,AirFlowRateMode3,,,,4050,03,currentvalue,,UIR,,m³/h,,minimum,,UIR,,m³/h,,ma
 r,,BypassTemperature,,,,4050,04,currentvalue,,SIR,10,°C,,minimum,,SIR,10,°C,,maximum,,SIR,10,°C,,stepsize,,SIR,10,°C,,factorydefault,,SIR,10,°C
 r,,BypassHysterese,,,,4050,30,currentvalue,,SIR,10,°C,,minimum,,SIR,10,°C,,maximum,,SIR,10,°C,,stepsize,,SIR,10,°C,,factorydefault,,SIR,10,°C
 r,,BypassValveOperation,,,,4050,1b,currentvalue,,UIR,0=auto;1=closed;2=open,,,minimum,,UIR,,,,maximum,,UIR,,,,stepsize,,UIR,,,,factorydefault,,UIR
-r,,ZentralheizungWRG,,,,4050,07,aktuell,s,UIR,0=aus;1=ein,,,minimum,,UIR,,,,maximum,,UIR,,,,Schrittgroesse,,UIR,,,,Werkseinstellung,,UIR
-r,,DruckungleichgewichtZulaessig,,,,4050,08,aktuell,s,UIR,0=nicht zulaessig;1=zulaessig,,,minimum,,UIR,,,,maximum,,UIR,,,,Schrittgroesse,,UIR,,,,Werkseinstellung,,UIR
-r,,FestesDruckungleichgewicht,,,,4050,09,aktuell,,SIR,,m³/h,,minimum,,SIR,,m³/h,,maximum,,SIR,,m³/h,,Schrittgroesse,,SIR,,m³/h,,Werkseinstellung,,SIR,,m³/h
-r,,RHSensorVorhanden,,,,4050,32,aktuell,,UIR,,,,minimum,,UIR,,,,maximum,,UIR,,,,Schrittgroesse,,UIR,,,,Werkseinstellung,,UIR,,
-r,,RHSensorEmpfindlichkeit,,,,4050,33,aktuell,,SIR,,,,minimum,,SIR,,,,maximum,,SIR,,,,Schrittgroesse,,SIR,,,,Werkseinstellung,,SIR
-r,,BeleuchtungDisplay,,,,4050,1d,aktuell,,UIR,,%,,minimum,,UIR,,%,,maximum,,UIR,,%,,Schrittgroesse,,UIR,,%,,Werkseinstellung,,UIR,,%
-r,,VorheizRegister_inst,,,,4050,31,aktuell,,UIR,1=ja;0=nein
+r,,CentralHeatingPlusHeatRecover,,,,4050,07,currentvalue,s,UIR,0=off;1=on,,,minimum,,UIR,,,,maximum,,UIR,,,,stepsize,,UIR,,,,factorydefault,,UIR
+r,,ImbalancePermissible,,,,4050,08,currentvalue,s,UIR,0=notallowed;1=allowed,,,minimum,,UIR,,,,maximum,,UIR,,,,stepsize,,UIR,,,,factorydefault,,UIR
+r,,FixedImbalance,,,,4050,09,currentvalue,,SIR,,m³/h,,minimum,,SIR,,m³/h,,maximum,,SIR,,m³/h,,stepsize,,SIR,,m³/h,,factorydefault,,SIR,,m³/h
+r,,RHSensorAvailable,,,,4050,32,currentvalue,,UIR,,,,minimum,,UIR,,,,maximum,,UIR,,,,stepsize,,UIR,,,,factorydefault,,UIR,,
+r,,RHSensorSensitivity,,,,4050,33,currentvalue,,SIR,,,,minimum,,SIR,,,,maximum,,SIR,,,,stepsize,,SIR,,,,factorydefault,,SIR
+r,,DisplayBrightness,,,,4050,1d,currentvalue,,UIR,,%,,minimum,,UIR,,%,,maximum,,UIR,,%,,stepsize,,UIR,,%,,factorydefault,,UIR,,%
+r,,PreheaterInstalled,,,,4050,31,currentvalue,,UIR,1=yes;0=no
 
 #### FILTER UND LAUFZEITEN ####
 r,,TageMitFilter,,,,4050,22,,,UIR,,bei 90 Tagen kommt Filterwarnung 
