@@ -12,7 +12,7 @@
 ## *r,kwl,,,,3c,4050,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ## *w,kwl,,,,3c,4050,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 
-#### AKTUELLE KONFIGDATEN ####
+#### ACTUAL CONFIGURATION ####
 r,,AirFlowRateMode0,,,,4050,21,currentvalue,,UIR,,m³/h,,minimum,,UIR,,m³/h,,maximum,,UIR,,m³/h,,stepsize,,UIR,,m³/h,,factorydefault,,UIR,,m³/h
 r,,AirFlowRateMode1,,,,4050,01,currentvalue,,UIR,,m³/h,,minimum,,UIR,,m³/h,,maximum,,UIR,,m³/h,,stepsize,,UIR,,m³/h,,factorydefault,,UIR,,m³/h
 r,,AirFlowRateMode2,,,,4050,02,currentvalue,,UIR,,m³/h,,minimum,,UIR,,m³/h,,maximum,,UIR,,m³/h,,stepsize,,UIR,,m³/h,,factorydefault,,UIR,,m³/h
@@ -28,14 +28,14 @@ r,,RHSensorSensitivity,,,,4050,33,currentvalue,,SIR,,,,minimum,,SIR,,,,maximum,,
 r,,DisplayBrightness,,,,4050,1d,currentvalue,,UIR,,%,,minimum,,UIR,,%,,maximum,,UIR,,%,,stepsize,,UIR,,%,,factorydefault,,UIR,,%
 r,,PreheaterInstalled,,,,4050,31,currentvalue,,UIR,1=yes;0=no
 
-#### FILTER UND LAUFZEITEN ####
-r,,TageMitFilter,,,,4050,22,,,UIR,,bei 90 Tagen kommt Filterwarnung 
-r,,LuftmengeMitFilter,,,,4050,23,,,UIR,,tm³ 
-r,,LuftmengeFilterSchwellwert,,,,4050,1c,,,UIR,,tm³ 
-r,,BetriebsstundenTotal,,,,4050,24,,,UIR,-5,h,,,,UIR,,,,,,UIR,,,,,,UIR,,,,,,UIR
-r,,LuftmengeTotal,,,,4050,25,,,UIR,-1000,m³,,,,UIR,,,,,,UIR,,,,,,UIR,,,,,,UIR
+#### FILTER AND OPERATIONAL INFO ####
+r,,FilterInstalledDays,,,,4050,22,,,UIR,,after 90 days a filter warning will appear
+r,,AirFlowWithFilter,,,,4050,23,,,UIR,,tm³ 
+r,,AirflowFilterThreshold,,,,4050,1c,,,UIR,,tm³ 
+r,,TotalOperatingHours,,,,4050,24,,,UIR,-5,h,,,,UIR,,,,,,UIR,,,,,,UIR,,,,,,UIR
+r,,AirFlowTotal,,,,4050,25,,,UIR,-1000,m³,,,,UIR,,,,,,UIR,,,,,,UIR,,,,,,UIR
 
-#### KONFIGURATION AENDERN ####
+#### EDIT CONFIGURATION ####
 w,,AirFlowRateMode0,408001,,,4080,21,,,UIR,,m³/h
 w,,AirFlowRateMode1,408001,,,4080,01,,,UIR,,m³/h
 w,,AirFlowRateMode2,408001,,,4080,02,,,UIR,,m³/h
@@ -43,13 +43,13 @@ w,,AirFlowRateMode3,408001,,,4080,03,,,UIR,,m³/h
 w,,BypassTemperature,408001,,,4080,04,,,UIR,10,°C
 w,,BypassHysterese,408003,,,4080,30,,,UIR,10,°C
 w,,BypassValveOperation,408003,,,4080,1b,,,UIR,0=auto;1=closed;2=open
-w,,VorheizRegister_an,408003,,,4080,31,,,UIR,0=nein;1=ja
-w,,ZentralheizungWRG,408007,,,4080,07,,,UIR,0=aus;1=ein
+w,,PreheaterEnabled,408003,,,4080,31,,,UIR,0=no;1=yes
+w,,CentralHeatingPlusHeatRecover,408007,,,4080,07,,,UIR,0=off;1=on
 w,,ImbalancePermissible,408008,,,4080,08,,,UIR,0=not allowed;1=allowed
 w,,FixedImbalance,408009,,,4080,09,,,SIR,,m³/h
 w,,FanSpeed,,,,40a1,,,,ULR,0x0=Feuchteschutz;0x00010001=Reduziert;0x00020002=Normal;0x00030003=Intensiv,,,,,IGN:1
 
-#### SENSORDATEN ####
+#### SENSOR INFORMATION ####
 r,,RelativeHumidity,40220120,,,4022,20,,,UIR,10,% ,RelativeHumidity
 r,,HumidityBoostState,40220121,,,4022,21,,,UIR,0=Error;1=Not Initialized;2=Sensor Not Active;3=PowerUp Delay;4=Normal RH;5=Boost Rising;6=Boost Stable;7=Boost Decending,,HumidityBoostState
 r,,SoftwareVersion,40220100,,,4022,00,,,STR:*,,,SoftwareVersion
@@ -72,11 +72,11 @@ r,,CO2Sensor3Value,4022012D,,,4022,2d,,,UIR,,,CO2Sensor3Value
 r,,CO2Sensor4Status,4022012E,,,4022,2e,,,UIR,,,CO2Sensor4Status
 r,,CO2Sensor4Value,4022012F,,,4022,2f,,,UIR,,,CO2Sensor4Value
 
-#### SONSTIGES ####
+#### OTHER ####
 r,,Errors,409000,,,4090,00,,s,UCH,,,,ign,,IGN:2,,,,code,,UCH,,,,code,,UCH,,,,code,,UCH,,,,code,,UCH,,,,code,,UCH,,,,code,,UCH,,,,code,,UCH,,,,code,,UCH,,,,code,,UCH,,,,code,,UCH
 #w,,reseterrors,409103FFFFFF,,,4091,7c0001,,m,HEX:3,,,,result,s,UIR,0=ResetNotRequested;1=ResetSuccessful;2=ResetRelayed;3=NoErrorsFound;4=ResetFailed;5=BlockingErrors;6=UnknownResult
 #w,,resetfilter,409103FFFFFF,,,4091,7c0100,,,,,,,result,s,UIR,0=ResetNotRequested;1=ResetSuccessful;2=ResetRelayed;3=FilterWarningWasNotSet;4=ResetFailed;5=UnknownResult
-r,,PosStufenschalter,,,,4022,06,,,UIR,,,switchposition
+r,,SwitchPosition,,,,4022,06,,,UIR,,,switchposition
 r,,DipswitchValue,40220104,,,4022,04,,,UIR,,,DipswitchValue
 r,,FanStatus,40220111,,,4022,11,,,UIR,0=Initialize;1=Const. Flow;2=Const. RPM;3=Off;4=Error,,FanStatus
 r,,SettingInletFlow,40220109,,,4022,09,,,UIR,,m³/h,SettingInletFlow
